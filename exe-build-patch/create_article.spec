@@ -17,14 +17,16 @@ a = Analysis(
     noarchive=False,
     optimize=0,
 )
+
 pyz = PYZ(a.pure)
+
 exe = EXE(
     pyz,
     a.scripts,
     a.binaries,
     a.datas,
     [],
-    name="記事自動作成ツール",
+    name="article_creator",
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,

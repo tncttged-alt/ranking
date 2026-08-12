@@ -9,5 +9,16 @@
       "month": 8000,
       "week": 2000
     }
+  },
+  {
+    "title": "サンプル作品 強さランキングTOP30",
+    "titleKana": "さんぷるさくひん",
+    "url": "rankings/sample-work-strength-ranking/page-30-29.html",
+    "description": "サンプル作品のキャラクターを、作中戦績や能力から評価したランキングです。",
+    "views": {
+      "all": 0,
+      "month": 0,
+      "week": 0
+    }
   }
 ]
