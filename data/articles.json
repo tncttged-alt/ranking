@@ -1,86 +1,41 @@
 [
   {
-    "id": "souten",
     "title": "蒼天のブレイバー 強さランキングTOP30",
     "category": "強さランキング",
-    "image": "assets/images/thumb-1.svg",
     "url": "article.html",
-    "date": "2026.08.10",
+    "image": "assets/images/thumb-1.svg",
+    "date": "2026.08.12",
     "views": {
       "all": 98240,
       "month": 12480,
       "week": 3180
     },
-    "keywords": "蒼天 ブレイバー セラ レオン 強さ"
+    "keywords": "蒼天 ブレイバー 強さ"
   },
   {
-    "id": "phantom",
     "title": "幻影クロニクル 総合力ランキングTOP30",
     "category": "総合力ランキング",
-    "image": "assets/images/thumb-2.svg",
     "url": "#",
+    "image": "assets/images/thumb-2.svg",
     "date": "2026.08.08",
     "views": {
       "all": 75810,
       "month": 16320,
       "week": 4950
     },
-    "keywords": "幻影 クロニクル 総合力"
+    "keywords": "幻影 クロニクル"
   },
   {
-    "id": "brain",
     "title": "頭脳戦が熱い漫画キャラランキングTOP20",
     "category": "テーマ別",
-    "image": "assets/images/thumb-3.svg",
     "url": "#",
+    "image": "assets/images/thumb-3.svg",
     "date": "2026.08.05",
     "views": {
       "all": 110520,
       "month": 9430,
       "week": 2570
     },
-    "keywords": "漫画 頭脳戦 キャラ"
-  },
-  {
-    "id": "villain",
-    "title": "印象に残る悪役キャラクターランキングTOP25",
-    "category": "テーマ別",
-    "image": "assets/images/thumb-4.svg",
-    "url": "#",
-    "date": "2026.07.28",
-    "views": {
-      "all": 67120,
-      "month": 18110,
-      "week": 6380
-    },
-    "keywords": "アニメ 漫画 悪役 ランキング"
-  },
-  {
-    "id": "ability",
-    "title": "蒼天のブレイバー 最強能力ランキングTOP20",
-    "category": "能力ランキング",
-    "image": "assets/images/thumb-5.svg",
-    "url": "#",
-    "date": "2026.07.20",
-    "views": {
-      "all": 82440,
-      "month": 13350,
-      "week": 3710
-    },
-    "keywords": "蒼天 ブレイバー 能力 最強"
-  },
-  {
-    "id": "growth",
-    "title": "成長率がすごい主人公ランキングTOP15",
-    "category": "テーマ別",
-    "image": "assets/images/thumb-6.svg",
-    "url": "#",
-    "date": "2026.07.16",
-    "views": {
-      "all": 54330,
-      "month": 8880,
-      "week": 5690
-    },
-    "keywords": "主人公 成長 アニメ 漫画"
+    "keywords": "漫画 頭脳戦"
   }
 ]

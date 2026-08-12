@@ -1,4 +1,4 @@
-const rankingCharacters = [
+[
   {
     "rank": 30,
     "name": "セラ・ノヴァ",
@@ -269,65 +269,4 @@ const rankingCharacters = [
     "utility": "9.3",
     "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
   }
-];
-const startRank = Number(document.body.dataset.rankStart);
-const endRank = Number(document.body.dataset.rankEnd);
-const rankingList = document.querySelector("#rankingList");
-
-function createRanking(character) {
-  const imageNumber = ((30 - character.rank) % 6) + 1;
-  return `
-    <section class="rank">
-      <div class="rankhead">
-        <span class="ranknum">${character.rank}位</span>
-        <h3>${character.name}</h3>
-      </div>
-      <div class="rankbody">
-        <img src="assets/images/character-${imageNumber}.svg" alt="${character.name}のサンプル画像" width="600" height="450">
-        <div>
-          <div class="scores">
-            <span>攻撃 <b>${character.attack}</b></span>
-            <span>防御 <b>${character.defense}</b></span>
-            <span>速度 <b>${character.speed}</b></span>
-            <span>応用 <b>${character.utility}</b></span>
-          </div>
-          <p>${character.description}</p>
-        </div>
-      </div>
-    </section>`;
-}
-
-rankingList.innerHTML = rankingCharacters
-  .filter((character) => character.rank <= startRank && character.rank >= endRank)
-  .map(createRanking)
-  .join("");
-
-const commentForm = document.querySelector("#commentForm");
-const commentList = document.querySelector("#commentList");
-
-function escapeHtml(value) {
-  const element = document.createElement("div");
-  element.textContent = value;
-  return element.innerHTML;
-}
-
-function renderComments() {
-  const comments = JSON.parse(localStorage.getItem("ranking-comments") || "[]");
-  commentList.innerHTML = comments
-    .map((comment) => `<div class="comment"><b>${escapeHtml(comment.name)}</b><p>${escapeHtml(comment.body)}</p></div>`)
-    .join("");
-}
-
-commentForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const comments = JSON.parse(localStorage.getItem("ranking-comments") || "[]");
-  comments.unshift({
-    name: document.querySelector("#commentName").value,
-    body: document.querySelector("#commentBody").value,
-  });
-  localStorage.setItem("ranking-comments", JSON.stringify(comments));
-  commentForm.reset();
-  renderComments();
-});
-
-renderComments();
+]
