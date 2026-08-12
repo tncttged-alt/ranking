@@ -1,41 +1,32 @@
 [
   {
     "title": "蒼天のブレイバー 強さランキングTOP30",
-    "category": "強さランキング",
-    "url": "article.html",
-    "image": "assets/images/thumb-1.svg",
-    "date": "2026.08.12",
-    "views": {
-      "all": 98240,
-      "month": 12480,
-      "week": 3180
-    },
-    "keywords": "蒼天 ブレイバー 強さ"
+    "url": "rankings/sample-ranking/page-30-25.html",
+    "week": 3000
   },
   {
-    "title": "幻影クロニクル 総合力ランキングTOP30",
-    "category": "総合力ランキング",
+    "title": "暁のアルカナ 総合力ランキングTOP30",
     "url": "#",
-    "image": "assets/images/thumb-2.svg",
-    "date": "2026.08.08",
-    "views": {
-      "all": 75810,
-      "month": 16320,
-      "week": 4950
-    },
-    "keywords": "幻影 クロニクル"
+    "week": 2500
   },
   {
-    "title": "頭脳戦が熱い漫画キャラランキングTOP20",
-    "category": "テーマ別",
+    "title": "エターナルレコード 強さランキングTOP30",
     "url": "#",
-    "image": "assets/images/thumb-3.svg",
-    "date": "2026.08.05",
-    "views": {
-      "all": 110520,
-      "month": 9430,
-      "week": 2570
-    },
-    "keywords": "漫画 頭脳戦"
+    "week": 2100
+  },
+  {
+    "title": "銀河戦線 最強キャラランキングTOP30",
+    "url": "#",
+    "week": 1900
+  },
+  {
+    "title": "クロノスギア 能力ランキングTOP20",
+    "url": "#",
+    "week": 1700
+  },
+  {
+    "title": "桜花剣伝 強さランキングTOP30",
+    "url": "#",
+    "week": 1500
   }
 ]

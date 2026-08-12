@@ -1,0 +1,1 @@
+fetch("ranking-data.json").then(r=>r.json()).then(data=>{const s=+document.body.dataset.start,e=+document.body.dataset.end;rankingList.innerHTML=data.filter(x=>x.rank<=s&&x.rank>=e).map(x=>`<section class="rank"><h3><span class="num">${x.rank}位</span>${x.name}</h3><span class="score">総合評価 ${x.score}</span><p>${x.description}</p></section>`).join("")});
