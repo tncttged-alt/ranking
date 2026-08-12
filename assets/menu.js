@@ -1,1 +1,51 @@
-const ROOT=document.body.dataset.root||"";const drawer=document.querySelector("#drawer"),overlay=document.querySelector("#overlay");function toggle(v){drawer.classList.toggle("open",v);overlay.classList.toggle("open",v)}document.querySelector("#menuBtn").onclick=()=>toggle(true);document.querySelector("#close").onclick=()=>toggle(false);overlay.onclick=()=>toggle(false);fetch(ROOT+"data/articles.json").then(r=>r.json()).then(a=>{weekly.innerHTML=[...a].sort((x,y)=>y.week-x.week).slice(0,3).map((x,i)=>`<a href="${ROOT+x.url}">${i+1}位 ${x.title}</a>`).join("")});
+const rootPath = document.body.dataset.root || "";
+const menuButton = document.querySelector("#menuBtn");
+const menuDrawer = document.querySelector("#drawer");
+const menuOverlay = document.querySelector("#overlay");
+const closeButton = document.querySelector("#close");
+const weeklyMenu = document.querySelector("#weekly");
+
+function setMenuOpen(isOpen) {
+  menuDrawer?.classList.toggle("open", isOpen);
+  menuOverlay?.classList.toggle("open", isOpen);
+  menuButton?.setAttribute("aria-expanded", String(isOpen));
+  document.body.style.overflow = isOpen ? "hidden" : "";
+}
+
+menuButton?.addEventListener("click", () => setMenuOpen(true));
+closeButton?.addEventListener("click", () => setMenuOpen(false));
+menuOverlay?.addEventListener("click", () => setMenuOpen(false));
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    setMenuOpen(false);
+  }
+});
+
+fetch(`${rootPath}data/articles.json`)
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`記事データを取得できませんでした: ${response.status}`);
+    }
+
+    return response.json();
+  })
+  .then((articles) => {
+    const weeklyTopArticles = [...articles]
+      .sort((first, second) => second.views.week - first.views.week)
+      .slice(0, 3);
+
+    weeklyMenu.innerHTML = weeklyTopArticles
+      .map(
+        (article, index) => `
+          <a href="${rootPath}${article.url}">
+            ${index + 1}位 ${article.title}
+          </a>
+        `,
+      )
+      .join("");
+  })
+  .catch((error) => {
+    console.error(error);
+    weeklyMenu.innerHTML = "<small>記事情報を読み込めませんでした。</small>";
+  });
