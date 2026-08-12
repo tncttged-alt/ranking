@@ -13,15 +13,16 @@ const kanaGroups = [
   { label: "わ行", characters: "わをん" },
 ];
 
-function findKanaGroup(titleKana) {
-  const firstCharacter = titleKana.trim().charAt(0);
-  return (
-    kanaGroups.find((group) => group.characters.includes(firstCharacter))?.label ||
-    "その他"
+function getKanaGroup(titleKana) {
+  const firstCharacter = (titleKana || "").trim().charAt(0);
+  const matchedGroup = kanaGroups.find((group) =>
+    group.characters.includes(firstCharacter),
   );
+
+  return matchedGroup?.label || "その他";
 }
 
-function createIndexItem(article) {
+function createArticleLink(article) {
   return `
     <a class="indexItem" href="${article.url}">
       <b>${article.title}</b>
@@ -30,34 +31,53 @@ function createIndexItem(article) {
   `;
 }
 
-fetch("data/articles.json")
-  .then((response) => response.json())
-  .then((articles) => {
-    const sortedArticles = [...articles].sort((first, second) =>
-      first.titleKana.localeCompare(second.titleKana, "ja"),
-    );
-    const labels = [...kanaGroups.map((group) => group.label), "その他"];
+function renderArticleIndex(articles) {
+  const sortedArticles = [...articles].sort((first, second) =>
+    (first.titleKana || first.title).localeCompare(
+      second.titleKana || second.title,
+      "ja",
+    ),
+  );
+  const groupLabels = [...kanaGroups.map((group) => group.label), "その他"];
 
-    articleIndex.innerHTML = labels
-      .map((label) => {
-        const groupArticles = sortedArticles.filter(
-          (article) => findKanaGroup(article.titleKana) === label,
-        );
+  articleIndex.innerHTML = groupLabels
+    .map((label) => {
+      const articlesInGroup = sortedArticles.filter(
+        (article) =>
+          getKanaGroup(article.titleKana || article.title) === label,
+      );
 
-        if (groupArticles.length === 0) {
-          return "";
-        }
+      if (articlesInGroup.length === 0) return "";
 
-        return `
-          <section class="indexGroup">
-            <h2>${label}</h2>
-            ${groupArticles.map(createIndexItem).join("")}
-          </section>
-        `;
-      })
-      .join("");
-  })
-  .catch((error) => {
+      return `
+        <section class="indexGroup">
+          <h2>${label}</h2>
+          <div class="articleIndexList">
+            ${articlesInGroup.map(createArticleLink).join("")}
+          </div>
+        </section>
+      `;
+    })
+    .join("");
+}
+
+async function initializeArticleIndex() {
+  try {
+    const response = await fetch("data/articles.json");
+    if (!response.ok) {
+      throw new Error(`記事データの取得に失敗しました: ${response.status}`);
+    }
+
+    const articles = await response.json();
+    renderArticleIndex(articles);
+  } catch (error) {
     console.error(error);
-    articleIndex.innerHTML = "<p>記事一覧を読み込めませんでした。</p>";
-  });
+    articleIndex.innerHTML = `
+      <p class="errorMessage">
+        記事一覧を読み込めませんでした。ローカルサーバー経由で開いてください。
+      </p>
+    `;
+  }
+}
+
+initializeArticleIndex();

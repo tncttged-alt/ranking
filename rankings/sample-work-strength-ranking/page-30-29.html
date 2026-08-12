@@ -8,7 +8,23 @@
   <link rel="stylesheet" href="../../assets/style.css">
 </head>
 <body data-root="../../" data-page-index="0">
-  <header class="header"><button id="menuBtn" class="menuBtn" aria-label="メニューを開く" aria-expanded="false">☰</button><a class="brand" href="../../index.html">ランキングデータベース</a></header><div id="overlay" class="overlay"></div><aside id="drawer" class="drawer"><button id="close" class="close" aria-label="メニューを閉じる">×</button><h2>メニュー</h2><a href="../../index.html">タイトルに戻る</a><a href="../../articles.html">記事一覧</a><h3>週間ランキング上位の記事</h3><div id="weekly"></div></aside>
+  <header class="header">
+  <button id="menuBtn" class="menuBtn" aria-label="メニューを開く" aria-expanded="false">☰</button>
+  <a class="brand" href="../../index.html">ランキングデータベース</a>
+</header>
+<div id="overlay" class="overlay"></div>
+<aside id="drawer" class="drawer" aria-label="サイトメニュー">
+  <div class="drawerHeader">
+    <h2>メニュー</h2>
+    <button id="close" class="close" aria-label="メニューを閉じる">×</button>
+  </div>
+  <nav class="drawerNav">
+    <a href="../../index.html">タイトルに戻る</a>
+    <a href="../../articles.html">記事一覧</a>
+  </nav>
+  <h3>週間ランキング上位の記事</h3>
+  <div id="weekly" class="weeklyLinks"></div>
+</aside>
   <main class="main">
     <article class="article">
       <h1>サンプル作品 強さランキングTOP30</h1>

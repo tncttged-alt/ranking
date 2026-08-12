@@ -151,7 +151,23 @@ def split_into_pages(characters: list[dict[str, Any]], page_size: int = 6) -> li
 
 
 def create_menu(root_path: str) -> str:
-    return f'''<header class="header"><button id="menuBtn" class="menuBtn" aria-label="メニューを開く" aria-expanded="false">☰</button><a class="brand" href="{root_path}index.html">ランキングデータベース</a></header><div id="overlay" class="overlay"></div><aside id="drawer" class="drawer"><button id="close" class="close" aria-label="メニューを閉じる">×</button><h2>メニュー</h2><a href="{root_path}index.html">タイトルに戻る</a><a href="{root_path}articles.html">記事一覧</a><h3>週間ランキング上位の記事</h3><div id="weekly"></div></aside>'''
+    return f'''<header class="header">
+  <button id="menuBtn" class="menuBtn" aria-label="メニューを開く" aria-expanded="false">☰</button>
+  <a class="brand" href="{root_path}index.html">ランキングデータベース</a>
+</header>
+<div id="overlay" class="overlay"></div>
+<aside id="drawer" class="drawer" aria-label="サイトメニュー">
+  <div class="drawerHeader">
+    <h2>メニュー</h2>
+    <button id="close" class="close" aria-label="メニューを閉じる">×</button>
+  </div>
+  <nav class="drawerNav">
+    <a href="{root_path}index.html">タイトルに戻る</a>
+    <a href="{root_path}articles.html">記事一覧</a>
+  </nav>
+  <h3>週間ランキング上位の記事</h3>
+  <div id="weekly" class="weeklyLinks"></div>
+</aside>'''
 
 
 def build_page(
