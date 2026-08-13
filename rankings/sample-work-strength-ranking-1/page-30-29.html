@@ -6,29 +6,46 @@
   <title>サンプル作品 強さランキングTOP30｜ランキングデータベース</title>
   <meta name="description" content="サンプル作品のキャラクターを、作中戦績や能力から評価したランキングです。">
   <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="stylesheet" href="../../assets/comments.css">
 </head>
 <body data-root="../../" data-page-index="0">
-  <header class="header"><button id="menuBtn" class="menuBtn" aria-label="メニューを開く" aria-expanded="false">☰</button><a class="brand" href="../../index.html">ランキングデータベース</a></header><div id="overlay" class="overlay"></div><aside id="drawer" class="drawer"><button id="close" class="close" aria-label="メニューを閉じる">×</button><h2>メニュー</h2><a href="../../index.html">タイトルに戻る</a><a href="../../articles.html">記事一覧</a><h3>週間ランキング上位の記事</h3><div id="weekly"></div></aside>
-  <main class="main">
-    <article class="article">
-      <h1>サンプル作品 強さランキングTOP30</h1>
-      <p>サンプル作品のキャラクターを、作中戦績や能力から評価したランキングです。</p>
-      <h2>30位～29位</h2>
-      <div id="rankingList"></div>
-      <nav class="pages" aria-label="ランキングページ"><a class="active" href="page-30-29.html">30～29位</a></nav>
-      <section class="summary"><h2>順位まとめ</h2><ol><li>29位 キャラクターB</li><li>30位 キャラクターA</li></ol></section>
-      <section id="related" class="related"><h2>関連記事</h2><div id="relatedList"></div></section>
-      <section id="comments" class="comments"><h2>コメント</h2><div id="commentsList"></div>
-        <form id="commentForm" class="commentForm">
-          <input id="commentName" type="text" placeholder="名前（任意）" />
-          <textarea id="commentText" placeholder="コメントを入力"></textarea>
-          <button type="submit">投稿</button>
-        </form>
-      </section>
-    </article>
-  </main>
-  <footer class="footer">© Ranking Database</footer>
-  <script src="../../assets/menu.js"></script>
-  <script src="ranking.js"></script>
+    <header class="header">
+  <button id="menuBtn" class="menuBtn" aria-label="メニューを開く" aria-expanded="false">☰</button>
+  <a class="brand" href="../../index.html">ランキングデータベース</a>
+</header>
+<div id="overlay" class="overlay"></div>
+<aside id="drawer" class="drawer" aria-label="サイトメニュー">
+  <div class="drawerHeader">
+    <h2>メニュー</h2>
+    <button id="close" class="close" aria-label="メニューを閉じる">×</button>
+  </div>
+  <nav class="drawerNav">
+    <a href="../../index.html">タイトルに戻る</a>
+    <a href="../../articles.html">記事一覧</a>
+  </nav>
+  <h3>週間ランキング上位の記事</h3>
+  <div id="weekly" class="weeklyLinks"></div>
+</aside>
+    <main class="main">
+        <article class="article">
+            <h1>サンプル作品 強さランキングTOP30</h1>
+            <p>サンプル作品のキャラクターを、作中戦績や能力から評価したランキングです。</p>
+            <h2>30位～29位</h2>
+            <div id="rankingList"></div>
+            <nav class="pages" aria-label="ランキングページ"><a class="active" href="page-30-29.html">30～29位</a></nav>
+            <section class="summary"><h2>順位まとめ</h2><ol><li>29位 キャラクターB</li><li>30位 キャラクターA</li></ol></section>
+            <section id="related" class="related"><h2>関連記事</h2><div id="relatedList"></div></section>
+            <section id="comments" class="comments"><h2>コメント</h2><div id="commentsList"></div>
+                <form id="commentForm" class="commentForm">
+                    <input id="commentName" type="text" placeholder="名前（任意）" />
+                    <textarea id="commentText" placeholder="コメントを入力"></textarea>
+                    <button type="submit">投稿</button>
+                </form>
+            </section>
+        </article>
+    </main>
+    <footer class="footer">© Ranking Database</footer>
+    <script src="../../assets/menu.js"></script>
+    <script src="ranking.js"></script>
 </body>
 </html>

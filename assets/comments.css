@@ -1,0 +1,14 @@
+/* Styles for related articles and comments */
+.related{margin-top:28px;padding:16px;background:#fff7ed;border-radius:9px}
+.relatedItem{padding:8px 0;border-bottom:1px dashed #ffdcb1}
+.relatedItem:last-child{border-bottom:none}
+.relatedItem a{color:#b45309;font-weight:700}
+.comments{margin-top:20px;padding:16px;background:#f8fafc;border-radius:9px}
+.commentItem{padding:12px;border-bottom:1px solid #eee}
+.commentItem:last-child{border-bottom:none}
+.commentMeta{font-size:13px;color:#374151;margin-bottom:6px}
+.commentBody{white-space:pre-wrap}
+.commentForm{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.commentForm input,.commentForm textarea{padding:8px;border:1px solid #ddd;border-radius:6px}
+.commentForm button{align-self:flex-start;background:#111827;color:white;border:0;padding:8px 12px;border-radius:6px}
+.moreCommentsLink{display:inline-block;margin-top:8px;color:#2563eb}
