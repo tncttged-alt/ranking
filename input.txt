@@ -1,11 +1,11 @@
 【タイトル】
-サンプル作品 強さランキングTOP30aaa
+サsi
 
 【タイトル読み】
 さんぷるさくひん
 
 【URLスラッグ】
-sample-work-strength-ranking-2
+sample-work-strength-ranking-3
 
 【概要】
 サンプル作品のキャラクターを、作中戦績や能力から評価したランキングです。a
