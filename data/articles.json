@@ -1,0 +1,46 @@
+[
+  {
+    "title": "蒼天のブレイバー 強さランキングTOP30",
+    "titleKana": "そうてんのぶれいばー",
+    "url": "rankings/sample-ranking/page-30-25.html",
+    "description": "サンプルランキングです。",
+    "views": {
+      "all": 50000,
+      "month": 8000,
+      "week": 2000
+    }
+  },
+  {
+    "title": "サンプル作品 強さランキングTOP30",
+    "titleKana": "さんぷるさくひん",
+    "url": "rankings/sample-work-strength-ranking/page-30-29.html",
+    "description": "サンプル作品のキャラクターを、作中戦績や能力から評価したランキングです。",
+    "views": {
+      "all": 0,
+      "month": 0,
+      "week": 0
+    }
+  },
+  {
+    "title": "サンプル作品 強さランキングTOP30",
+    "titleKana": "さんぷるさくひん",
+    "url": "rankings/sample-work-strength-ranking-1/page-30-29.html",
+    "description": "サンプル作品のキャラクターを、作中戦績や能力から評価したランキングです。",
+    "views": {
+      "all": 0,
+      "month": 0,
+      "week": 0
+    }
+  },
+  {
+    "title": "サンプル作品 強さランキングTOP30aaa",
+    "titleKana": "さんぷるさくひん",
+    "url": "rankings/sample-work-strength-ranking-2/page-30-29.html",
+    "description": "サンプル作品のキャラクターを、作中戦績や能力から評価したランキングです。a",
+    "views": {
+      "all": 0,
+      "month": 0,
+      "week": 0
+    }
+  }
+]

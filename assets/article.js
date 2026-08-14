@@ -1,0 +1,333 @@
+const rankingCharacters = [
+  {
+    "rank": 30,
+    "name": "セラ・ノヴァ",
+    "attack": "6.2",
+    "defense": "6.0",
+    "speed": "6.0",
+    "utility": "6.2",
+    "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
+  },
+  {
+    "rank": 29,
+    "name": "ガルド・レイン",
+    "attack": "6.2",
+    "defense": "6.5",
+    "speed": "6.6",
+    "utility": "6.2",
+    "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
+  },
+  {
+    "rank": 28,
+    "name": "ミナト・クロウ",
+    "attack": "6.2",
+    "defense": "6.5",
+    "speed": "6.6",
+    "utility": "6.2",
+    "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
+  },
+  {
+    "rank": 27,
+    "name": "イリス・フェン",
+    "attack": "6.9",
+    "defense": "6.5",
+    "speed": "6.6",
+    "utility": "6.6",
+    "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
+  },
+  {
+    "rank": 26,
+    "name": "オウガ・ベル",
+    "attack": "6.9",
+    "defense": "6.5",
+    "speed": "6.6",
+    "utility": "6.6",
+    "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
+  },
+  {
+    "rank": 25,
+    "name": "レオン・アーク",
+    "attack": "7.0",
+    "defense": "6.5",
+    "speed": "6.6",
+    "utility": "6.6",
+    "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
+  },
+  {
+    "rank": 24,
+    "name": "カレン・ミスト",
+    "attack": "7.0",
+    "defense": "7.1",
+    "speed": "6.7",
+    "utility": "6.7",
+    "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
+  },
+  {
+    "rank": 23,
+    "name": "ダリオ・グランツ",
+    "attack": "7.0",
+    "defense": "7.1",
+    "speed": "7.3",
+    "utility": "7.1",
+    "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
+  },
+  {
+    "rank": 22,
+    "name": "ユナ・セレス",
+    "attack": "7.0",
+    "defense": "7.1",
+    "speed": "7.3",
+    "utility": "7.1",
+    "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
+  },
+  {
+    "rank": 21,
+    "name": "ヴァン・ローディス",
+    "attack": "7.0",
+    "defense": "7.1",
+    "speed": "7.3",
+    "utility": "7.1",
+    "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
+  },
+  {
+    "rank": 20,
+    "name": "ルカ・シオン",
+    "attack": "7.7",
+    "defense": "7.1",
+    "speed": "7.3",
+    "utility": "7.1",
+    "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
+  },
+  {
+    "rank": 19,
+    "name": "メイラ・ハーツ",
+    "attack": "7.7",
+    "defense": "7.6",
+    "speed": "7.3",
+    "utility": "7.5",
+    "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
+  },
+  {
+    "rank": 18,
+    "name": "ゼイン・ブレイズ",
+    "attack": "7.7",
+    "defense": "7.6",
+    "speed": "7.3",
+    "utility": "7.5",
+    "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
+  },
+  {
+    "rank": 17,
+    "name": "フィオナ・レイ",
+    "attack": "7.7",
+    "defense": "7.6",
+    "speed": "7.9",
+    "utility": "7.5",
+    "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
+  },
+  {
+    "rank": 16,
+    "name": "クロード・ネメシス",
+    "attack": "7.7",
+    "defense": "7.6",
+    "speed": "7.9",
+    "utility": "7.5",
+    "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
+  },
+  {
+    "rank": 15,
+    "name": "アリア・ヴェイル",
+    "attack": "7.8",
+    "defense": "7.7",
+    "speed": "8.0",
+    "utility": "8.0",
+    "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
+  },
+  {
+    "rank": 14,
+    "name": "バルク・タイタン",
+    "attack": "7.8",
+    "defense": "8.2",
+    "speed": "8.0",
+    "utility": "8.0",
+    "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
+  },
+  {
+    "rank": 13,
+    "name": "シエル・ルーン",
+    "attack": "8.5",
+    "defense": "8.2",
+    "speed": "8.0",
+    "utility": "8.0",
+    "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
+  },
+  {
+    "rank": 12,
+    "name": "ノア・テンペスト",
+    "attack": "8.5",
+    "defense": "8.2",
+    "speed": "8.0",
+    "utility": "8.0",
+    "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
+  },
+  {
+    "rank": 11,
+    "name": "リゼ・ファントム",
+    "attack": "8.5",
+    "defense": "8.2",
+    "speed": "8.6",
+    "utility": "8.4",
+    "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
+  },
+  {
+    "rank": 10,
+    "name": "カイ・ドラグーン",
+    "attack": "8.5",
+    "defense": "8.2",
+    "speed": "8.6",
+    "utility": "8.4",
+    "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
+  },
+  {
+    "rank": 9,
+    "name": "エルナ・オラクル",
+    "attack": "8.5",
+    "defense": "8.7",
+    "speed": "8.6",
+    "utility": "8.4",
+    "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
+  },
+  {
+    "rank": 8,
+    "name": "グレン・ヴォルフ",
+    "attack": "8.5",
+    "defense": "8.7",
+    "speed": "8.6",
+    "utility": "8.4",
+    "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
+  },
+  {
+    "rank": 7,
+    "name": "ミレイ・アストラ",
+    "attack": "8.5",
+    "defense": "8.7",
+    "speed": "8.6",
+    "utility": "8.8",
+    "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
+  },
+  {
+    "rank": 6,
+    "name": "ハルト・ゼニス",
+    "attack": "9.2",
+    "defense": "8.7",
+    "speed": "8.6",
+    "utility": "8.8",
+    "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
+  },
+  {
+    "rank": 5,
+    "name": "ルシア・エクリプス",
+    "attack": "9.2",
+    "defense": "8.8",
+    "speed": "9.2",
+    "utility": "8.8",
+    "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
+  },
+  {
+    "rank": 4,
+    "name": "レイヴン・アビス",
+    "attack": "9.3",
+    "defense": "9.3",
+    "speed": "9.3",
+    "utility": "8.9",
+    "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
+  },
+  {
+    "rank": 3,
+    "name": "アルト・インフィニティ",
+    "attack": "9.3",
+    "defense": "9.3",
+    "speed": "9.3",
+    "utility": "9.3",
+    "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
+  },
+  {
+    "rank": 2,
+    "name": "ソラ・エンペラー",
+    "attack": "9.3",
+    "defense": "9.3",
+    "speed": "9.3",
+    "utility": "9.3",
+    "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
+  },
+  {
+    "rank": 1,
+    "name": "アーク・オリジン",
+    "attack": "9.3",
+    "defense": "9.3",
+    "speed": "9.3",
+    "utility": "9.3",
+    "description": "作中戦績、能力の応用性、対戦相性を総合して評価したサンプル解説です。公開時には具体的なエピソードと比較根拠を追記してください。"
+  }
+];
+const startRank = Number(document.body.dataset.rankStart);
+const endRank = Number(document.body.dataset.rankEnd);
+const rankingList = document.querySelector("#rankingList");
+
+function createRanking(character) {
+  const imageNumber = ((30 - character.rank) % 6) + 1;
+  return `
+    <section class="rank">
+      <div class="rankhead">
+        <span class="ranknum">${character.rank}位</span>
+        <h3>${character.name}</h3>
+      </div>
+      <div class="rankbody">
+        <img src="assets/images/character-${imageNumber}.svg" alt="${character.name}のサンプル画像" width="600" height="450">
+        <div>
+          <div class="scores">
+            <span>攻撃 <b>${character.attack}</b></span>
+            <span>防御 <b>${character.defense}</b></span>
+            <span>速度 <b>${character.speed}</b></span>
+            <span>応用 <b>${character.utility}</b></span>
+          </div>
+          <p>${character.description}</p>
+        </div>
+      </div>
+    </section>`;
+}
+
+rankingList.innerHTML = rankingCharacters
+  .filter((character) => character.rank <= startRank && character.rank >= endRank)
+  .map(createRanking)
+  .join("");
+
+const commentForm = document.querySelector("#commentForm");
+const commentList = document.querySelector("#commentList");
+
+function escapeHtml(value) {
+  const element = document.createElement("div");
+  element.textContent = value;
+  return element.innerHTML;
+}
+
+function renderComments() {
+  const comments = JSON.parse(localStorage.getItem("ranking-comments") || "[]");
+  commentList.innerHTML = comments
+    .map((comment) => `<div class="comment"><b>${escapeHtml(comment.name)}</b><p>${escapeHtml(comment.body)}</p></div>`)
+    .join("");
+}
+
+commentForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const comments = JSON.parse(localStorage.getItem("ranking-comments") || "[]");
+  comments.unshift({
+    name: document.querySelector("#commentName").value,
+    body: document.querySelector("#commentBody").value,
+  });
+  localStorage.setItem("ranking-comments", JSON.stringify(comments));
+  commentForm.reset();
+  renderComments();
+});
+
+renderComments();
