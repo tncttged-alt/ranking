@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{TITLE}}</title>
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="/assets/article.css">
+ </head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="/">ランキングDB</a>
+    <nav class="main-nav"><a href="/">Home</a> <a href="/articles.html">Articles</a></nav>
+  </header>
+
+  <main class="article-main">
+    <article class="article">
+      <h1 class="article-title">{{TITLE}}</h1>
+      <p class="article-meta">掲載日: {{DATE}}</p>
+      <section class="article-body">
+        {{CONTENT}}
+      </section>
+      <section id="related" class="related"></section>
+      <section id="comments" class="comments">
+        <h2>コメント</h2>
+        <div id="comments-list"></div>
+        <form id="commentForm" class="comment-form">
+          <input id="comment-name" placeholder="名前" />
+          <textarea id="comment-text" placeholder="コメントを入力"></textarea>
+          <div class="comment-actions">
+            <button type="submit">投稿</button>
+          </div>
+        </form>
+      </section>
+    </article>
+  </main>
+
+  <script>
+    // Optionally include related articles as JSON string during generation
+    window.relatedArticles = {{RELATED_JSON}};
+  </script>
+  <script src="/assets/article.js"></script>
+</body>
+</html>

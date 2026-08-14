@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>コメント詳細｜ランキングデータベース</title>
+  <meta name="description" content="コメントの詳細表示ページです。">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body data-root="../">
+  <header class="header"><button id="menuBtn" class="menuBtn" aria-label="メニューを開く" aria-expanded="false">☰</button><a class="brand" href="../index.html">ランキングデータベース</a></header>
+  <div id="overlay" class="overlay"></div>
+  <aside id="drawer" class="drawer"><button id="close" class="close" aria-label="メニューを閉じる">×</button><h2>メニュー</h2><a href="../index.html">タイトルに戻る</a><a href="../articles.html">記事一覧</a><h3>週間ランキング上位の記事</h3><div id="weekly"></div></aside>
+  <main class="main">
+    <article class="article">
+      <h1>コメント詳細</h1>
+      <p id="targetPath"></p>
+      <div id="commentsList"></div>
+      <form id="commentForm" class="commentForm">
+        <input id="commentName" type="text" placeholder="名前（任意）" />
+        <textarea id="commentText" placeholder="コメントを入力"></textarea>
+        <button type="submit">投稿</button>
+      </form>
+    </article>
+  </main>
+  <footer class="footer">© Ranking Database</footer>
+  <script src="../assets/menu.js"></script>
+  <script>
+    function escapeHtml(value) { const d = document.createElement('div'); d.textContent = value; return d.innerHTML; }
+    function getParam(name) { const p = new URLSearchParams(location.search); return p.get(name); }
+    const path = getParam('path') || '/';
+    document.getElementById('targetPath').textContent = path;
+    const commentsList = document.getElementById('commentsList');
+    const form = document.getElementById('commentForm');
+    const nameInput = document.getElementById('commentName');
+    const textInput = document.getElementById('commentText');
+    const storageKey = 'comments:' + path;
+    const root = document.body.dataset.root || '../';
+    const apiEndpoint = document.body.dataset.commentsApi || null;
+
+    async function loadComments() {
+      let arr = [];
+      if (apiEndpoint) {
+        try {
+          const res = await fetch(`${apiEndpoint}?path=${encodeURIComponent(path)}`);
+          if (res.ok) arr = await res.json();
+        } catch (e) { console.error(e); }
+      }
+      if (!arr || !arr.length) {
+        try { arr = JSON.parse(localStorage.getItem(storageKey) || '[]'); } catch (e) { arr = []; }
+      }
+      if (!arr.length) { commentsList.innerHTML = '<p>まだコメントはありません。</p>'; return; }
+      commentsList.innerHTML = arr.map(c => `<div class="commentItem"><div class="commentMeta"><strong>${escapeHtml(c.name||'匿名')}</strong> <time>${escapeHtml(new Date(c.time).toLocaleString())}</time></div><div class="commentBody">${escapeHtml(c.text).replaceAll('\n','<br>')}</div></div>`).join('');
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = nameInput.value.trim() || '匿名';
+      const text = textInput.value.trim();
+      if (!text) return;
+      const comment = { name, text, time: Date.now() };
+      if (apiEndpoint) {
+        try { await fetch(apiEndpoint, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ path, ...comment }) }); } catch (e) { console.error(e); }
+      }
+      const arr = JSON.parse(localStorage.getItem(storageKey) || '[]'); arr.push(comment); localStorage.setItem(storageKey, JSON.stringify(arr));
+      nameInput.value=''; textInput.value=''; loadComments();
+    });
+
+    loadComments();
+  </script>
+</body>
+</html>

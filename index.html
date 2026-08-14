@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ランキングデータベース</title>
+  <meta name="description" content="アニメ・漫画キャラクターのランキング記事を掲載するランキングデータベースです。">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-root="">
+  <header class="header">
+  <button id="menuBtn" class="menuBtn" aria-label="メニューを開く" aria-expanded="false">☰</button>
+  <a class="brand" href="index.html">ランキングデータベース</a>
+</header>
+<div id="overlay" class="overlay"></div>
+<aside id="drawer" class="drawer" aria-label="サイトメニュー">
+  <div class="drawerHeader">
+    <h2>メニュー</h2>
+    <button id="close" class="close" aria-label="メニューを閉じる">×</button>
+  </div>
+  <nav class="drawerNav">
+    <a href="index.html">タイトルに戻る</a>
+    <a href="articles.html">記事一覧</a>
+  </nav>
+  <h3>週間ランキング上位の記事</h3>
+  <div id="weekly" class="weeklyLinks"></div>
+</aside>
+  <section class="hero">
+    <div class="heroInner">
+      <p class="eyebrow">RANKING DATABASE</p>
+      <h1>ランキングデータベース</h1>
+      <p>アニメ・漫画キャラクターを、作中描写と戦績から本気で格付け。</p>
+    </div>
+  </section>
+  <main class="main">
+    <section class="homeSection">
+      <h2>人気記事ランキング</h2>
+      <p>閲覧数を基準に、全体・月間・週間の上位記事を表示します。</p>
+      <div id="popularitySections"></div>
+    </section>
+    <section class="homeSection">
+      <h2>新着記事</h2>
+      <div id="newArticles" class="grid"></div>
+    </section>
+  </main>
+  <footer class="footer">© 2026 Ranking Database</footer>
+  <script src="assets/menu.js" defer></script>
+  <script src="assets/app.js" defer></script>
+</body>
+</html>
