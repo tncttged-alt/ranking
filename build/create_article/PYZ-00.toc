@@ -1,4 +1,4 @@
-('C:\\Users\\rin\\Desktop\\ranking.com_v1.4\\build\\create_article\\PYZ-00.pyz',
+('C:\\Users\\rin\\Desktop\\rankingv1.6\\build\\create_article\\PYZ-00.pyz',
  [('__future__',
    'C:\\Users\\rin\\AppData\\Local\\Programs\\Python\\Python310\\lib\\__future__.py',
    'PYMODULE'),
