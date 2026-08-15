@@ -1,7 +1,7 @@
 const rankingList = document.querySelector("#rankingList");
 const pageIndex = Number(document.body.dataset.pageIndex);
 const articleTitle = document.body.dataset.articleTitle || document.title;
-const rootPath = document.body.dataset.root || "../../";
+const articleRootPath = document.body.dataset.root || "../../";
 
 const GAS_API_URL = "https://script.google.com/macros/s/AKfycbyY0xu90qSz-h4IMzkrMyqVBja71HPnXyOqx00tEP4Rt7GTPIBnKJHBuY-xpXPV-JpX/exec";
 const IP_LOOKUP_URL = "https://api.ipify.org?format=json";
@@ -66,7 +66,7 @@ function titleSimilarity(firstTitle, secondTitle) {
 async function loadRelatedPages() {
   const container = document.querySelector("#relatedPagesList");
   try {
-    const response = await fetch(`${rootPath}data/articles.json`);
+    const response = await fetch(`${articleRootPath}data/articles.json`);
     if (!response.ok) throw new Error(`記事一覧取得エラー: ${response.status}`);
     const articles = await response.json();
     const relatedArticles = articles
@@ -80,14 +80,14 @@ async function loadRelatedPages() {
 
     container.innerHTML = relatedArticles.length
       ? relatedArticles
-          .map(
-            (article) => `
-              <a class="relatedPageLink" href="${rootPath}${article.url}">
+        .map(
+          (article) => `
+              <a class="relatedPageLink" href="${articleRootPath}${article.url}">
                 ${escapeHtml(article.title)}
               </a>
             `,
-          )
-          .join("")
+        )
+        .join("")
       : "<p>関連ページはありません。</p>";
   } catch (error) {
     console.error(error);
