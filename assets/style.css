@@ -449,3 +449,12 @@ a {
         padding: 16px
     }
 }
+
+.article p,
+.rankingDescription,
+.rankingReason,
+.characterProfile,
+.commentBody,
+.summary li {
+  white-space: pre-line;
+}
